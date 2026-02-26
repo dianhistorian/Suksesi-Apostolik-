@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biografi Uskup</title>
+
+    <style>
+        /* ================= BODY ================= */
+        
+        body {
+            font-family: "Times New Roman", serif;
+            font-size: 18px;
+            line-height: 1.9;
+            letter-spacing: 0.4px;
+            color: #2c1b12;
+            background-color: #f4f1ea;
+            background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+            margin: 0;
+            box-sizing: border-box;
+        }
+        /* ================= HEADER ================= */
+        
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #6b0f1a;
+            color: gold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            border-bottom: 3px solid gold;
+        }
+        
+        .header img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            text-shadow: 1px 1px 3px black;
+        }
+        /* ================= MAIN ================= */
+        
+        #main {
+            max-width: 900px;
+            /* lebih sempit agar nyaman baca panjang */
+            margin: 50px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid #c9b37d;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        /* ================= BIO HEADER ================= */
+        
+        .bio-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .bio-header img {
+            width: 260px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 3px solid #c9b37d;
+        }
+        
+        .bio-header h2 {
+            margin-top: 20px;
+            color: #6b0f1a;
+            letter-spacing: 1px;
+        }
+        /* ================= TEXT ================= */
+        
+        p {
+            text-align: justify;
+            margin-bottom: 22px;
+        }
+        /* Drop cap gaya manuskrip */
+        
+        p:first-of-type::first-letter {
+            font-size: 48px;
+            font-weight: bold;
+            float: left;
+            margin-right: 8px;
+            color: #6b0f1a;
+        }
+        /* ================= FOOTER ================= */
+        
+        footer {
+            background: #6b0f1a;
+            color: gold;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            border-top: 3px solid gold;
+        }
+        /* ================= RESPONSIVE ================= */
+        
+        @media (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
+            #main {
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Suksesi Apostolik Gereja Katolik Barat dan Timur</h1>
+        <img src="A1.png">
+    </header>
+
+    <div id="main">
+
+        <div class="bio-header">
+            <img src="Luksemburg3.jpg">
+            <h2>Pierre Nommesch</h2>
+            <p><i>Uskup Luksemburg</i></p>
+        </div>
+
+        <p>
+            Pada usia 26 tahun, tepatnya pada 28 Oktober 1890, Pierre Nommesch ditahbiskan sebagai imam. Pada 8 Maret 1920, ia diangkat sebagai Uskup Luksemburg, dan pada 25 Maret 1920, ia ditahbiskan sebagai uskup oleh Sebastiano Nicotra. Ia tetap menjabat hingga
+            wafatnya.
+        </p>
+        <p>
+            Ia menjadi uskup setelah masa panjang sede vacante, yang terjadi akibat tantangan terhadap kedaulatan nasional Luksemburg pasca Gencatan Senjata Perang Dunia I.
+        </p>
+        <p>
+            Masa jabatan Pierre Nommesch ditandai oleh upaya rekonsiliasi dan pemahaman antara negara dan gereja: konflik terkait sekolah memperoleh solusi kompromi pada tahun 1921, sehingga pendidikan agama, yang sejak 1912 ditempatkan di paroki-paroki gereja, kembali
+            memiliki ruang dalam pendidikan umum. Di bawah kepemimpinannya, kesetiaan terhadap monarki dan tradisi Luksemburg, kedekatan dengan Roma (melalui ziarah ke “kota suci” dan perayaan ulang tahun penobatan kepausan), serta penghormatan kepada
+            Perawan Maria (termasuk perluasan katedral yang dimulai pada 1935) tetap menjadi aspek penting dari Katolikisme di Luksemburg.
+        </p>
+        <p>
+            Sorotan keagamaan dan pastoral lainnya selama masa jabatan Pierre Nommesch meliputi Kongres Nasional Ekaristi pada tahun 1924, peningkatan devosi kepada Hati Kudus, pembangunan kembali seminari di Limpertsberg pada tahun 1930, serta konsolidasi asosiasi-asosiasi
+            dalam Aksi Katolik yang terinspirasi dari Belgia setelah tahun 1930.
+        </p>
+
+    </div>
+
+    <footer>
+        © Dian Mandala Putra
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suksesi Apostolik Gereja Katolik Barat dan Timur</title>
+
+    <style>
+        /* ================= BODY ================= */
+        
+        body {
+            font-family: "Times New Roman", serif;
+            font-size: 18px;
+            font-weight: normal;
+            font-style: normal;
+            line-height: 1.7;
+            letter-spacing: 0.5px;
+            text-align: justify;
+            text-decoration: none;
+            text-transform: none;
+            color: #2c1b12;
+            background-color: #f4f1ea;
+            background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: repeat;
+            opacity: 1;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* ================= HEADER ================= */
+        
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #6b0f1a;
+            color: gold;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            border-bottom: 3px solid gold;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+        }
+        
+        .header img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px black;
+        }
+        /* ================= MAIN ================= */
+        
+        #main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        /* ================= TEXT ================= */
+        
+        p {
+            margin-bottom: 25px;
+        }
+        /* Subtitle */
+        
+        .subtitle {
+            font-size: 26px;
+            font-weight: bold;
+            text-align: center;
+            margin: 60px 0 40px 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #6b0f1a;
+        }
+        /* ================= GRID ================= */
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-rows: auto;
+            gap: 25px;
+            row-gap: 25px;
+            column-gap: 25px;
+        }
+        
+        .grid-item {
+            display: block;
+            background-color: #ffffff;
+            border: 1px solid #c9b37d;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: #2c1b12;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .grid-item img {
+            width: 100%;
+            height: 220px;
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+        
+        .grid-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        /* ================= TABLE ================= */
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        
+        table td {
+            border: 1px solid #aaa;
+            padding: 10px;
+            vertical-align: top;
+        }
+        /* ================= BUTTON ICON ================= */
+        
+        .icon-btn {
+            display: inline-block;
+            padding: 8px 14px;
+            background-color: #6b0f1a;
+            color: gold;
+            border-radius: 4px;
+        }
+        /* ================= FOOTER ================= */
+        
+        footer {
+            position: relative;
+            background: #6b0f1a;
+            color: gold;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            border-top: 3px solid gold;
+        }
+        
+        #footer {
+            width: 100%;
+        }
+        /* ================= EFFECT ================= */
+        
+        .grid-item:active {
+            transform: scale(0.98);
+        }
+        
+        .grid-item:focus {
+            outline: 2px solid gold;
+        }
+        /* ================= RESPONSIVE ================= */
+        
+        @media (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
+            header {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <h1>Suksesi Apostolik Gereja Katolik Barat dan Timur</h1>
+        <img src="A1.png">
+    </header>
+
+    <!-- ================= MAIN ================= -->
+    <div id="main">
+
+        <p>
+            Keuskupan Agung Vaduz meliputi wilayah seluruh negara Kepangeranan Liechtenstein.
+        </p>
+
+        <div class="subtitle">Daftar Uskup Agung</div>
+
+        <div class="grid">
+
+            <a href="Wolfgang Haas.html" class="grid-item">
+                <img src="Vaduz1.jpg">
+                <h3>Wolfgang Haas (1997 - 2023)</h3>
+                <p>Wolfgang Haas adalah seorang prelatus Gereja Katolik kelahiran Liechtenstein yang menjabat sebagai uskup agung pertama Keuskupan Agung Vaduz yang baru didirikan di Liechtenstein dari tahun 1997 hingga 2023. Ia sebelumnya menjabat sebagai
+                    Uskup Chur di Swiss dari tahun 1990 hingga 1997, setelah dua tahun sebelumnya menjalankan tugas di keuskupan tersebut sebagai uskup koajutor.</p>
+            </a>
+
+            <a href="#" class="grid-item">
+                <img src="Gereja1.jpg">
+                <h3>Sede Vacante</h3>
+                <p>Sede vacante atau disebut juga takhta lowong merupakan istilah yang merujuk pada keadaan takhta episkopal suatu keuskupan yang lowong karena tidak adanya uskup yang menempati. Menurut hukum kanonik dalam Gereja Katolik, istilah ini merujuk
+                    pada kekosongan kekuasaan uskup dan Paus, setelah pemegang jabatan tersebut mangkat atau melepaskan jabatan.</p>
+            </a>
+
+            <a href="#" class="grid-item">
+                <img src="Gereja1.jpg">
+                <h3>Sede Vacante</h3>
+                <p>Sede vacante atau disebut juga takhta lowong merupakan istilah yang merujuk pada keadaan takhta episkopal suatu keuskupan yang lowong karena tidak adanya uskup yang menempati. Menurut hukum kanonik dalam Gereja Katolik, istilah ini merujuk
+                    pada kekosongan kekuasaan uskup dan Paus, setelah pemegang jabatan tersebut mangkat atau melepaskan jabatan.</p>
+            </a>
+
+
+            <a href="#" class="grid-item">
+                <img src="Gereja1.jpg">
+                <h3>Sede Vacante</h3>
+                <p>Sede vacante atau disebut juga takhta lowong merupakan istilah yang merujuk pada keadaan takhta episkopal suatu keuskupan yang lowong karena tidak adanya uskup yang menempati. Menurut hukum kanonik dalam Gereja Katolik, istilah ini merujuk
+                    pada kekosongan kekuasaan uskup dan Paus, setelah pemegang jabatan tersebut mangkat atau melepaskan jabatan.</p>
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="footer">
+        © Dian Mandala Putra
+    </footer>
+
+</body>
+
+</html>
