@@ -4,247 +4,1353 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suksesi Apostolik Gereja Katolik Barat dan Timur</title>
-
+    <title>Dukcapil Parigi Moutong</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* ================= BODY ================= */
+         :root {
+            --primary: #1a4a6b;
+            --primary-dark: #0f2e44;
+            --primary-light: #2563a8;
+            --accent: #e8a020;
+            --accent-light: #f5c842;
+            --surface: #f0f4f8;
+            --card: #ffffff;
+            --text: #1e2d3d;
+            --text-muted: #6b7f94;
+            --border: #dce6f0;
+            --sidebar-width: 260px;
+        }
         
-        body {
-            font-family: "Times New Roman", serif;
-            font-size: 18px;
-            font-weight: normal;
-            font-style: normal;
-            line-height: 1.7;
-            letter-spacing: 0.5px;
-            text-align: justify;
-            text-decoration: none;
-            text-transform: none;
-            color: #2c1b12;
-            background-color: #f4f1ea;
-            background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
-            background-size: cover;
-            background-position: center;
-            background-repeat: repeat;
-            opacity: 1;
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        /* ================= HEADER ================= */
         
-        header {
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--surface);
+            color: var(--text);
+            display: flex;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        /* ── SIDEBAR ── */
+        
+        .sidebar {
+            width: var(--sidebar-width);
+            background: linear-gradient(160deg, var(--primary-dark) 0%, var(--primary) 60%, var(--primary-light) 100%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+            box-shadow: 4px 0 24px rgba(15, 46, 68, .35);
+        }
+        
+        .sidebar-brand {
+            padding: 22px 20px 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, .12);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .brand-logo {
+            width: 46px;
+            height: 46px;
+            background: var(--accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(232, 160, 32, .4);
+        }
+        
+        .brand-text h2 {
+            font-size: 13px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.2;
+            letter-spacing: .3px;
+        }
+        
+        .brand-text p {
+            font-size: 10px;
+            color: rgba(255, 255, 255, .6);
+            margin-top: 2px;
+            line-height: 1.3;
+        }
+        
+        .sidebar-section {
+            padding: 18px 14px 6px;
+            font-size: 9.5px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .4);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        
+        .nav-item {
+            margin: 2px 10px;
+            padding: 10px 14px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: background .2s, transform .15s;
+            color: rgba(255, 255, 255, .75);
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        
+        .nav-item:hover {
+            background: rgba(255, 255, 255, .1);
+            color: #fff;
+            transform: translateX(2px);
+        }
+        
+        .nav-item.active {
+            background: rgba(255, 255, 255, .18);
+            color: #fff;
+            font-weight: 600;
+            border-left: 3px solid var(--accent);
+        }
+        
+        .nav-icon {
+            font-size: 16px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .sidebar-footer {
+            margin-top: auto;
+            padding: 14px 10px;
+            border-top: 1px solid rgba(255, 255, 255, .12);
+        }
+        
+        .logout-btn {
+            width: 100%;
+            padding: 10px 14px;
+            background: rgba(255, 255, 255, .08);
+            border: none;
+            border-radius: 10px;
+            color: rgba(255, 255, 255, .7);
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background .2s;
+        }
+        
+        .logout-btn:hover {
+            background: rgba(255, 255, 255, .15);
+            color: #fff;
+        }
+        /* ── MAIN ── */
+        
+        .main {
+            margin-left: var(--sidebar-width);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        /* ── TOPBAR ── */
+        
+        .topbar {
+            background: #fff;
+            padding: 0 28px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
-            z-index: 1000;
-            background: #6b0f1a;
-            color: gold;
+            z-index: 50;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+        }
+        
+        .topbar-title h1 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text);
+        }
+        
+        .topbar-title p {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 1px;
+        }
+        
+        .topbar-right {
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
             align-items: center;
-            padding: 15px 40px;
-            border-bottom: 3px solid gold;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+            gap: 14px;
         }
         
-        .header img {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
+        .topbar-date {
+            text-align: right;
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.5;
         }
         
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-            font-weight: bold;
-            text-shadow: 1px 1px 3px black;
+        .admin-badge {
+            width: 36px;
+            height: 36px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
         }
-        /* ================= MAIN ================= */
+        /* ── PAGE CONTENT ── */
         
-        #main {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
+        .page-content {
+            padding: 28px;
+            flex: 1;
         }
-        /* ================= TEXT ================= */
         
-        p {
-            margin-bottom: 25px;
+        .page-header {
+            margin-bottom: 24px;
         }
-        /* Subtitle */
         
-        .subtitle {
+        .page-header h2 {
+            font-family: 'Playfair Display', serif;
             font-size: 26px;
-            font-weight: bold;
-            text-align: center;
-            margin: 60px 0 40px 0;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #6b0f1a;
-        }
-        /* ================= GRID ================= */
-        
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            grid-template-rows: auto;
-            gap: 25px;
-            row-gap: 25px;
-            column-gap: 25px;
+            color: var(--text);
+            margin-bottom: 6px;
         }
         
-        .grid-item {
+        .page-header p {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            max-width: 520px;
+            line-height: 1.6;
+        }
+        /* ── SECTIONS (tabs) ── */
+        
+        .section {
+            display: none;
+        }
+        
+        .section.active {
             display: block;
-            background-color: #ffffff;
-            border: 1px solid #c9b37d;
-            border-radius: 8px;
-            padding: 15px;
+        }
+        /* ── ORG CHART ── */
+        
+        .org-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+        
+        .org-label {
+            background: var(--primary);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            padding: 5px 18px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+        }
+        
+        .org-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 18px 22px;
+            box-shadow: 0 2px 16px rgba(26, 74, 107, .1);
+            border: 1.5px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 180px;
             text-align: center;
-            text-decoration: none;
-            color: #2c1b12;
-            transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform .2s, box-shadow .2s, border-color .2s;
+            position: relative;
         }
         
-        .grid-item img {
-            width: 100%;
-            height: 220px;
-            max-width: 100%;
+        .org-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 28px rgba(26, 74, 107, .18);
+            border-color: var(--primary-light);
+        }
+        
+        .org-card.kepala {
+            border-color: var(--accent);
+            box-shadow: 0 2px 20px rgba(232, 160, 32, .2);
+        }
+        
+        .org-card.kepala:hover {
+            border-color: var(--accent-light);
+            box-shadow: 0 8px 28px rgba(232, 160, 32, .3);
+        }
+        
+        .org-photo {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
             object-fit: cover;
-            border-radius: 6px;
+            object-position: top;
+            border: 3px solid var(--border);
+            margin-bottom: 10px;
         }
         
-        .grid-item:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        .org-card.kepala .org-photo {
+            border-color: var(--accent);
         }
-        /* ================= TABLE ================= */
         
-        table {
+        .org-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text);
+            line-height: 1.3;
+            margin-bottom: 3px;
+        }
+        
+        .org-role {
+            font-size: 11px;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+        
+        .org-detail {
+            font-size: 11px;
+            color: var(--primary-light);
+            margin-top: 7px;
+            font-weight: 600;
+        }
+        
+        .org-connector {
+            width: 2px;
+            height: 28px;
+            background: var(--border);
+            margin: 0 auto;
+        }
+        
+        .org-row {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .org-row-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .org-hline {
+            height: 2px;
+            background: var(--border);
+            width: calc(100% - 180px);
+            max-width: 760px;
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+        
+        .org-branch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        /* ── INFO CARDS ── */
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 18px;
+            margin-top: 10px;
+        }
+        
+        .info-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 22px;
+            border: 1.5px solid var(--border);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
+        }
+        
+        .info-card h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .info-card ul {
+            list-style: none;
+        }
+        
+        .info-card ul li {
+            font-size: 13px;
+            color: var(--text-muted);
+            padding: 5px 0;
+            border-bottom: 1px solid var(--surface);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        
+        .info-card ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .info-card ul li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: 900;
+            margin-top: 1px;
+        }
+        /* ── CHALLENGE / LAYANAN ── */
+        
+        .challenge-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .challenge-item {
+            background: #fff;
+            border-radius: 14px;
+            padding: 16px 20px;
+            border-left: 4px solid var(--primary-light);
+            box-shadow: 0 1px 8px rgba(0, 0, 0, .06);
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+        
+        .challenge-num {
+            width: 28px;
+            height: 28px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        
+        .challenge-content h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 3px;
+        }
+        
+        .challenge-content p {
+            font-size: 12.5px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        /* ── JADWAL ── */
+        
+        .jadwal-table {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1.5px solid var(--border);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
             width: 100%;
             border-collapse: collapse;
-            table-layout: fixed;
         }
         
-        table td {
-            border: 1px solid #aaa;
-            padding: 10px;
-            vertical-align: top;
+        .jadwal-table th {
+            background: var(--primary);
+            color: #fff;
+            padding: 13px 18px;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: left;
         }
-        /* ================= BUTTON ICON ================= */
         
-        .icon-btn {
-            display: inline-block;
-            padding: 8px 14px;
-            background-color: #6b0f1a;
-            color: gold;
-            border-radius: 4px;
+        .jadwal-table td {
+            padding: 12px 18px;
+            font-size: 13px;
+            border-bottom: 1px solid var(--surface);
+            color: var(--text);
         }
-        /* ================= FOOTER ================= */
         
-        footer {
-            position: relative;
-            background: #6b0f1a;
-            color: gold;
+        .jadwal-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .jadwal-table tr:nth-child(even) td {
+            background: var(--surface);
+        }
+        
+        .badge-open {
+            background: #d1fae5;
+            color: #065f46;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+        
+        .badge-closed {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+        /* ── MODAL ── */
+        
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 46, 68, .55);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+            animation: fadeIn .2s ease;
+        }
+        
+        .modal-overlay.open {
+            display: flex;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .modal {
+            background: #fff;
+            border-radius: 20px;
+            padding: 32px;
+            max-width: 360px;
+            width: 90%;
             text-align: center;
+            box-shadow: 0 20px 60px rgba(15, 46, 68, .3);
+            animation: slideUp .25s ease;
+        }
+        
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .modal-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top;
+            border: 4px solid var(--accent);
+            margin-bottom: 14px;
+        }
+        
+        .modal h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text);
+        }
+        
+        .modal .modal-role {
+            font-size: 13px;
+            color: var(--primary-light);
+            font-weight: 600;
+            margin: 4px 0 14px;
+        }
+        
+        .modal-info {
+            text-align: left;
+            margin-top: 14px;
+            border-top: 1px solid var(--border);
+            padding-top: 14px;
+        }
+        
+        .modal-info p {
+            font-size: 12.5px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+        
+        .modal-info strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        .modal-close {
+            margin-top: 18px;
+            padding: 10px 28px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background .2s;
+        }
+        
+        .modal-close:hover {
+            background: var(--primary-dark);
+        }
+        /* ── PROFIL PAGE ── */
+        
+        .profil-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+        
+        .profil-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 22px;
+            border: 1.5px solid var(--border);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
+        }
+        
+        .profil-card.full {
+            grid-column: 1 / -1;
+        }
+        
+        .profil-card h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .profil-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            padding: 6px 0;
+            border-bottom: 1px solid var(--surface);
+            color: var(--text-muted);
+        }
+        
+        .profil-row:last-child {
+            border-bottom: none;
+        }
+        
+        .profil-row strong {
+            color: var(--text);
+        }
+        
+        .hero-banner {
+            background: linear-gradient(120deg, var(--primary-dark), var(--primary-light));
+            border-radius: 18px;
+            padding: 28px 32px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            right: -40px;
+            top: -40px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, .06);
+            border-radius: 50%;
+        }
+        
+        .hero-banner::after {
+            content: '';
+            position: absolute;
+            right: 60px;
+            bottom: -60px;
+            width: 160px;
+            height: 160px;
+            background: rgba(255, 255, 255, .04);
+            border-radius: 50%;
+        }
+        
+        .hero-icon {
+            font-size: 52px;
+        }
+        
+        .hero-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 4px;
+        }
+        
+        .hero-text p {
+            font-size: 13px;
+            opacity: .8;
+            line-height: 1.5;
+        }
+        
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-bottom: 22px;
+        }
+        
+        .stat-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 18px;
+            text-align: center;
+            border: 1.5px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+        }
+        
+        .stat-card .stat-num {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        
+        .stat-card .stat-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+        /* ── LAYANAN UNGGULAN ── */
+        
+        .layanan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+        }
+        
+        .layanan-card {
+            background: #fff;
+            border-radius: 14px;
             padding: 20px;
-            margin-top: 60px;
-            border-top: 3px solid gold;
+            border: 1.5px solid var(--border);
+            text-align: center;
+            transition: transform .2s, box-shadow .2s;
         }
         
-        #footer {
-            width: 100%;
-        }
-        /* ================= EFFECT ================= */
-        
-        .grid-item:active {
-            transform: scale(0.98);
+        .layanan-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .1);
         }
         
-        .grid-item:focus {
-            outline: 2px solid gold;
+        .layanan-icon {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin: 0 auto 12px;
         }
-        /* ================= RESPONSIVE ================= */
         
-        @media (max-width: 600px) {
-            body {
-                font-size: 14px;
-            }
-            header {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
+        .layanan-card h4 {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text);
+            line-height: 1.4;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
-    <header class="header">
-        <h1>Suksesi Apostolik Gereja Katolik Barat dan Timur</h1>
-        <img src="A1.png">
-    </header>
-
-    <!-- ================= MAIN ================= -->
-    <div id="main">
-
-        <p>
-            Minta mereka menunjukkan catatan asli dari gereja mereka; minta mereka membentangkan gulungan daftar nama uskup mereka, yang mengalir dalam suksesi sejak awal dengan cara sedemikian sehingga uskup [pertama mereka] harus dapat menunjukkan yang menahbiskannya
-            dan pendahulunya setidaknya salah seorang rasul atau penerus apostolik.
-        </p>
-
-        <div class="subtitle">Takhta Suksesi Apostolik</div>
-
-        <div class="grid">
-
-            <a href="Luksemburg.html" class="grid-item">
-                <img src="Gereja2.jpg">
-                <h3>Uskup Agung Luksemburg</h3>
-                <p>Keuskupan Agung Luksemburg adalah sebuah keuskupan agung Ritus Latin Gereja Katolik di Keharyapatihan Luxembourg, yang meliputi seluruh Keharyapatihan tersebut. Keuskupan tersebut didirikan pada 1870, dan menjadi keuskupan agung pada 1988.</p>
-            </a>
-
-            <a href="Vaduz.html" class="grid-item">
-                <img src="Gereja1.jpg">
-                <h3>Uskup Agung Vaduz</h3>
-                <p>Keuskupan Agung Vaduz meliputi wilayah seluruh negara Kepangeranan Liechtenstein.</p>
-            </a>
-
-            <a href="Paus.html" class="grid-item">
-                <img src="Gereja1.jpg">
-                <h3>Paus Roma</h3>
-                <p>Paus sejatinya adalah Uskup Roma, yang menjadi pemimpin Gereja Katolik di seluruh dunia. Menurut Gereja Katolik, keutamaan Uskup Roma tersebut terutama berasal dari peranannya sebagai "penerus Santo Petrus", yang disebut sebagai "Uskup
-                    Roma pertama".</p>
-            </a>
-
-            <a href="keuskupan.html" class="grid-item">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Cathedral_of_Alexandria.jpg">
-                <h3>Patriarkat Aleksandria</h3>
-                <p>Warisan evangelisasi Santo Markus di Afrika.</p>
-            </a>
-
-            <a href="saint.html" class="grid-item">
-                <img src="A3.jpg">
-                <h3>Bonus: Santo & Santa</h3>
-                <p>Dalam kepercayaan Kristen, seorang Santo (Santa untuk wanita), juga dikenal sebagai orang kudus, adalah seseorang yang diakui memiliki tingkat kesucian yang luar biasa, kemiripan, atau kedekatan dengan Tuhan.</p>
-            </a>
-
-            <a href="saint.html" class="grid-item">
-                <img src="A3.jpg">
-                <h3>Bonus: Santo & Santa</h3>
-                <p>Dalam kepercayaan Kristen, seorang Santo (Santa untuk wanita), juga dikenal sebagai orang kudus, adalah seseorang yang diakui memiliki tingkat kesucian yang luar biasa, kemiripan, atau kedekatan dengan Tuhan.</p>
-            </a>
-
+    <!-- SIDEBAR -->
+    <nav class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo">🏛️</div>
+            <div class="brand-text">
+                <h2>Dukcapil Parigi Moutong</h2>
+                <p>Sistem Informasi Kependudukan</p>
+            </div>
         </div>
 
+        <div class="sidebar-section">Menu Utama</div>
+        <a class="nav-item active" onclick="showSection('beranda', this)">
+            <span class="nav-icon">🏠</span> Beranda
+        </a>
+        <a class="nav-item" onclick="showSection('profil', this)">
+            <span class="nav-icon">🏢</span> Profil Dinas
+        </a>
+        <a class="nav-item" onclick="showSection('layanan', this)">
+            <span class="nav-icon">📋</span> Layanan Unggulan
+        </a>
+
+        <div class="sidebar-section">Manajemen</div>
+        <a class="nav-item" onclick="showSection('struktur', this)">
+            <span class="nav-icon">👥</span> Struktur Organisasi
+        </a>
+        <a class="nav-item" onclick="showSection('jadwal', this)">
+            <span class="nav-icon">📅</span> Jadwal Pelayanan
+        </a>
+        <a class="nav-item" onclick="showSection('tantangan', this)">
+            <span class="nav-icon">⚠️</span> Tantangan & Kendala
+        </a>
+        <a class="nav-item" onclick="showSection('tugas', this)">
+            <span class="nav-icon">📜</span> Tugas & Fungsi
+        </a>
+
+        <div class="sidebar-footer">
+            <button class="logout-btn">
+      <span>↩️</span> Keluar
+    </button>
+        </div>
+    </nav>
+
+    <!-- MAIN -->
+    <div class="main">
+        <!-- TOPBAR -->
+        <div class="topbar">
+            <div class="topbar-title">
+                <h1 id="topbar-heading">Beranda</h1>
+                <p id="topbar-sub">Selamat datang di portal Dukcapil Parigi Moutong</p>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-date">
+                    <div id="topbar-date-day"></div>
+                    <div id="topbar-date-time"></div>
+                </div>
+                <div class="admin-badge">AD</div>
+                <span style="font-size:13px;font-weight:600;color:var(--text)">Admin</span>
+            </div>
+        </div>
+
+        <div class="page-content">
+
+            <!-- ══ BERANDA ══ -->
+            <div class="section active" id="section-beranda">
+                <div class="hero-banner">
+                    <div class="hero-icon">🏛️</div>
+                    <div class="hero-text">
+                        <h2>Dinas Kependudukan & Pencatatan Sipil</h2>
+                        <p>Kabupaten Parigi Moutong — Provinsi Sulawesi Tengah<br>Melayani dengan Integritas, Profesionalisme, dan Inovasi</p>
+                    </div>
+                </div>
+
+                <div class="stat-row">
+                    <div class="stat-card">
+                        <div class="stat-num">2002</div>
+                        <div class="stat-label">Tahun Berdiri</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num">6</div>
+                        <div class="stat-label">Bidang Pelayanan</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num">5</div>
+                        <div class="stat-label">Layanan Unggulan</div>
+                    </div>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>📍 Informasi Kantor</h3>
+                        <ul>
+                            <li>Desa Bambalemo, Kec. Parigi</li>
+                            <li>Kab. Parigi Moutong, Sulawesi Tengah</li>
+                            <li>Berdiri sejak tahun 2002</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h3>🕐 Jam Pelayanan</h3>
+                        <ul>
+                            <li>Senin – Kamis: 08.00 – 16.00</li>
+                            <li>Jumat: 08.00 – 16.30</li>
+                            <li>Sabtu – Minggu: Libur</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h3>📄 Layanan Tersedia</h3>
+                        <ul>
+                            <li>KTP-el & Kartu Keluarga</li>
+                            <li>Akta Kelahiran & Kematian</li>
+                            <li>Akta Perkawinan / Perceraian</li>
+                            <li>Kartu Identitas Anak (KIA)</li>
+                            <li>Identitas Kependudukan Digital (IKD)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ══ PROFIL ══ -->
+            <div class="section" id="section-profil">
+                <div class="page-header">
+                    <h2>Profil Dinas</h2>
+                    <p>Informasi lengkap mengenai Dinas Kependudukan dan Pencatatan Sipil Kabupaten Parigi Moutong.</p>
+                </div>
+                <div class="profil-grid">
+                    <div class="profil-card">
+                        <h3>🏢 Identitas Dinas</h3>
+                        <div class="profil-row"><span>Nama Dinas</span><strong>Dukcapil Parigi Moutong</strong></div>
+                        <div class="profil-row"><span>Kabupaten</span><strong>Parigi Moutong</strong></div>
+                        <div class="profil-row"><span>Provinsi</span><strong>Sulawesi Tengah</strong></div>
+                        <div class="profil-row"><span>Tahun Berdiri</span><strong>2002</strong></div>
+                    </div>
+                    <div class="profil-card">
+                        <h3>📍 Lokasi & Operasional</h3>
+                        <div class="profil-row"><span>Alamat</span><strong>Desa Bambalemo, Kec. Parigi</strong></div>
+                        <div class="profil-row"><span>Senin–Kamis</span><strong>08.00 – 16.00</strong></div>
+                        <div class="profil-row"><span>Jumat</span><strong>08.00 – 16.30</strong></div>
+                        <div class="profil-row"><span>Sabtu–Minggu</span><strong>Libur</strong></div>
+                    </div>
+                    <div class="profil-card full">
+                        <h3>🏗️ Struktur Bidang</h3>
+                        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:4px">
+                            <div style="background:var(--surface);border-radius:10px;padding:12px;font-size:12.5px;color:var(--text-muted)"><strong style="display:block;color:var(--primary);margin-bottom:4px">Sekretariat</strong>Subbag Umum, Keuangan, Perencanaan</div>
+                            <div style="background:var(--surface);border-radius:10px;padding:12px;font-size:12.5px;color:var(--text-muted)"><strong style="display:block;color:var(--primary);margin-bottom:4px">Bid. Pendaftaran Penduduk</strong>KTP-el, KK, Pindah Datang</div>
+                            <div style="background:var(--surface);border-radius:10px;padding:12px;font-size:12.5px;color:var(--text-muted)"><strong style="display:block;color:var(--primary);margin-bottom:4px">Bid. Pencatatan Sipil</strong>Akta Kelahiran, Kematian, Perkawinan</div>
+                            <div style="background:var(--surface);border-radius:10px;padding:12px;font-size:12.5px;color:var(--text-muted)"><strong style="display:block;color:var(--primary);margin-bottom:4px">Bid. PIAK</strong>Pengelolaan Sistem SIAK & Database</div>
+                            <div style="background:var(--surface);border-radius:10px;padding:12px;font-size:12.5px;color:var(--text-muted)"><strong style="display:block;color:var(--primary);margin-bottom:4px">Bid. Pemanfaatan Data</strong>Inovasi Layanan, IKD</div>
+                            <div style="background:var(--surface);border-radius:10px;padding:12px;font-size:12.5px;color:var(--text-muted)"><strong style="display:block;color:var(--primary);margin-bottom:4px">Jabatan Fungsional</strong>Operator Data, Analis Kependudukan</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ══ LAYANAN ══ -->
+            <div class="section" id="section-layanan">
+                <div class="page-header">
+                    <h2>Layanan Unggulan</h2>
+                    <p>Program dan layanan prioritas Dukcapil Parigi Moutong untuk masyarakat.</p>
+                </div>
+                <div class="layanan-grid">
+                    <div class="layanan-card">
+                        <div class="layanan-icon">🚗</div>
+                        <h4>Layanan Jemput Bola (Adminduk Keliling)</h4>
+                    </div>
+                    <div class="layanan-card">
+                        <div class="layanan-icon">⚡</div>
+                        <h4>Penerbitan Dokumen Cepat</h4>
+                    </div>
+                    <div class="layanan-card">
+                        <div class="layanan-icon">🏅</div>
+                        <h4>Peningkatan Kualitas & Integritas Layanan</h4>
+                    </div>
+                    <div class="layanan-card">
+                        <div class="layanan-icon">📆</div>
+                        <h4>Fokus Adminduk 100 Hari Kerja</h4>
+                    </div>
+                    <div class="layanan-card">
+                        <div class="layanan-icon">📝</div>
+                        <h4>Penerbitan KIA dan Akta</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ══ STRUKTUR ORGANISASI ══ -->
+            <div class="section" id="section-struktur">
+                <div class="page-header">
+                    <h2>Struktur Organisasi</h2>
+                    <p>Susunan organisasi Dukcapil Parigi Moutong — klik kartu untuk melihat biodata dan fungsi jabatan.</p>
+                </div>
+
+                <div class="org-wrapper">
+                    <!-- Kepala Dinas -->
+                    <div class="org-label">KEPALA DINAS</div>
+                    <div class="org-card kepala" onclick="openModal('sulis')">
+                        <img src="sulis.jpeg" class="org-photo" alt="Sulis Sarahwati Iklima">
+                        <div class="org-name">Sulis Sarahwati Iklima</div>
+                        <div class="org-role">Kepala Dinas</div>
+                        <div class="org-detail">Lihat Detail</div>
+                    </div>
+
+                    <div class="org-connector"></div>
+
+                    <!-- Sekretariat -->
+                    <div class="org-card" onclick="openModal('arnita')">
+                        <img src="arnita.jpeg" class="org-photo" alt="Arnita Sumule">
+                        <div class="org-name">Arnita Sumule</div>
+                        <div class="org-role">Sekretariat</div>
+                        <div class="org-detail">Lihat Detail</div>
+                    </div>
+
+                    <div class="org-connector"></div>
+
+                    <!-- Label bidang -->
+                    <div class="org-label">BIDANG-BIDANG</div>
+
+                    <!-- Horizontal line hint -->
+                    <div class="org-row-wrapper">
+                        <div class="org-hline"></div>
+                        <div style="height:20px;width:2px;background:var(--border);margin:0 auto"></div>
+                        <div class="org-row">
+                            <div class="org-branch">
+                                <div style="height:20px;width:2px;background:var(--border)"></div>
+                                <div class="org-card" onclick="openModal('risna')">
+                                    <img src="risna.jpeg" class="org-photo" alt="Risna Amanda Putri">
+                                    <div class="org-name">Risna Amanda Putri</div>
+                                    <div class="org-role">Bid. Pencatatan Sipil</div>
+                                    <div class="org-detail">Lihat Detail</div>
+                                </div>
+                            </div>
+                            <div class="org-branch">
+                                <div style="height:20px;width:2px;background:var(--border)"></div>
+                                <div class="org-card" onclick="openModal('nabila')">
+                                    <img src="putri.jpeg" class="org-photo" alt="Putri Nabila">
+                                    <div class="org-name">Putri Nabila</div>
+                                    <div class="org-role">Bid. Pelayanan Penduduk</div>
+                                    <div class="org-detail">Lihat Detail</div>
+                                </div>
+                            </div>
+                            <div class="org-branch">
+                                <div style="height:20px;width:2px;background:var(--border)"></div>
+                                <div class="org-card" onclick="openModal('inggrid')">
+                                    <img src="inggrid.jpeg" class="org-photo" alt="Inggrid Anleani Putri">
+                                    <div class="org-name">Inggrid Anleani Putri</div>
+                                    <div class="org-role">Bid. PIAK</div>
+                                    <div class="org-detail">Lihat Detail</div>
+                                </div>
+                            </div>
+                            <div class="org-branch">
+                                <div style="height:20px;width:2px;background:var(--border)"></div>
+                                <div class="org-card" onclick="openModal('kurnia')">
+                                    <img src="kurnia.jpeg" class="org-photo" alt="Kurnia A. Ayub">
+                                    <div class="org-name">Kurnia A. Ayub</div>
+                                    <div class="org-role">Bid. Pemanfaatan Data & Inovasi</div>
+                                    <div class="org-detail">Lihat Detail</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ══ JADWAL ══ -->
+            <div class="section" id="section-jadwal">
+                <div class="page-header">
+                    <h2>Jadwal Pelayanan</h2>
+                    <p>Jam operasional Dinas Kependudukan dan Pencatatan Sipil Kabupaten Parigi Moutong.</p>
+                </div>
+                <table class="jadwal-table">
+                    <thead>
+                        <tr>
+                            <th>Hari</th>
+                            <th>Jam Buka</th>
+                            <th>Jam Tutup</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Senin</td>
+                            <td>08.00</td>
+                            <td>16.00</td>
+                            <td><span class="badge-open">Buka</span></td>
+                        </tr>
+                        <tr>
+                            <td>Selasa</td>
+                            <td>08.00</td>
+                            <td>16.00</td>
+                            <td><span class="badge-open">Buka</span></td>
+                        </tr>
+                        <tr>
+                            <td>Rabu</td>
+                            <td>08.00</td>
+                            <td>16.00</td>
+                            <td><span class="badge-open">Buka</span></td>
+                        </tr>
+                        <tr>
+                            <td>Kamis</td>
+                            <td>08.00</td>
+                            <td>16.00</td>
+                            <td><span class="badge-open">Buka</span></td>
+                        </tr>
+                        <tr>
+                            <td>Jumat</td>
+                            <td>08.00</td>
+                            <td>16.30</td>
+                            <td><span class="badge-open">Buka</span></td>
+                        </tr>
+                        <tr>
+                            <td>Sabtu</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td><span class="badge-closed">Libur</span></td>
+                        </tr>
+                        <tr>
+                            <td>Minggu</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td><span class="badge-closed">Libur</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ══ TANTANGAN ══ -->
+            <div class="section" id="section-tantangan">
+                <div class="page-header">
+                    <h2>Tantangan & Kendala</h2>
+                    <p>Permasalahan yang dihadapi dalam penyelenggaraan layanan administrasi kependudukan.</p>
+                </div>
+                <div class="challenge-list">
+                    <div class="challenge-item">
+                        <div class="challenge-num">1</div>
+                        <div class="challenge-content">
+                            <h4>Keterbatasan Infrastruktur Teknologi</h4>
+                            <p>Pelayanan masih sering terganggu akibat jaringan tidak stabil dan ketergantungan pada server pusat, sehingga proses administrasi menjadi lambat.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-item">
+                        <div class="challenge-num">2</div>
+                        <div class="challenge-content">
+                            <h4>Sarana dan Prasarana Terbatas</h4>
+                            <p>Jumlah perangkat kerja dan loket pelayanan belum memadai, menyebabkan antrean panjang dan pelayanan kurang optimal.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-item">
+                        <div class="challenge-num">3</div>
+                        <div class="challenge-content">
+                            <h4>Keterbatasan Sumber Daya Manusia (SDM)</h4>
+                            <p>Jumlah pegawai tidak sebanding dengan luas wilayah dan jumlah penduduk yang dilayani, sehingga beban kerja tinggi.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-item">
+                        <div class="challenge-num">4</div>
+                        <div class="challenge-content">
+                            <h4>Akses Geografis Masyarakat</h4>
+                            <p>Wilayah Parigi Moutong yang luas dan sebagian terpencil menyulitkan masyarakat dalam mengakses layanan administrasi kependudukan.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-item">
+                        <div class="challenge-num">5</div>
+                        <div class="challenge-content">
+                            <h4>Permasalahan Data Kependudukan (NIK)</h4>
+                            <p>Masih ditemukan data penduduk yang tidak valid atau belum terbarui, sehingga menghambat akses layanan publik lainnya.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-item">
+                        <div class="challenge-num">6</div>
+                        <div class="challenge-content">
+                            <h4>Praktik Percaloan</h4>
+                            <p>Masih adanya perantara tidak resmi dalam pengurusan dokumen yang berpotensi merusak prinsip transparansi dan akuntabilitas pelayanan publik.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ══ TUGAS & FUNGSI ══ -->
+            <div class="section" id="section-tugas">
+                <div class="page-header">
+                    <h2>Tugas & Fungsi</h2>
+                    <p>Berdasarkan Pasal 55 Peraturan Daerah yang berlaku.</p>
+                </div>
+                <div class="profil-card" style="background:#fff;border-radius:16px;padding:24px;border:1.5px solid var(--border)">
+                    <h3 style="font-size:15px;font-weight:700;color:var(--primary);margin-bottom:16px">📜 Pasal 55 – Uraian Tugas dan Fungsi Dinas</h3>
+                    <p style="font-size:13.5px;color:var(--text);line-height:1.8;margin-bottom:14px">
+                        <strong>(1)</strong> Dinas mempunyai tugas membantu Bupati melaksanakan urusan pemerintahan yang menjadi kewenangan daerah dan tugas pembantuan di bidang ketahanan pangan.
+                    </p>
+                    <p style="font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:10px"><strong>(2)</strong> Dalam menyelenggarakan tugas tersebut, Dinas mempunyai fungsi:</p>
+                    <div style="display:flex;flex-direction:column;gap:8px">
+                        <div style="background:var(--surface);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--text-muted);line-height:1.6"><strong style="color:var(--primary)">a.</strong> Perumusan kebijakan daerah di bidang ketersediaan pangan, kerawanan pangan, distribusi pangan, cadangan pangan, penganekaragaman konsumsi dan keamanan pangan.</div>
+                        <div style="background:var(--surface);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--text-muted);line-height:1.6"><strong style="color:var(--primary)">b.</strong> Pelaksanaan kebijakan daerah di bidang ketersediaan pangan, kerawanan pangan, distribusi pangan, cadangan pangan, penganekaragaman konsumsi dan keamanan pangan.</div>
+                        <div style="background:var(--surface);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--text-muted);line-height:1.6"><strong style="color:var(--primary)">c.</strong> Koordinasi penyediaan instruktur dan pendukung di bidang ketersediaan pangan, kerawanan pangan, distribusi pangan, cadangan pangan, penganekaragaman konsumsi dan keamanan pangan.</div>
+                        <div style="background:var(--surface);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--text-muted);line-height:1.6"><strong style="color:var(--primary)">d.</strong> Peningkatan kualitas sumber daya manusia di bidang ketersediaan pangan, kerawanan pangan, distribusi pangan, cadangan pangan, penganekaragaman konsumsi dan keamanan pangan.</div>
+                        <div style="background:var(--surface);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--text-muted);line-height:1.6"><strong style="color:var(--primary)">e.</strong> Pemantauan, pengawasan, evaluasi dan pelaporan penyelenggaraan di bidang ketersediaan pangan, kerawanan pangan, distribusi pangan, cadangan pangan, penganekaragaman konsumsi dan
+                            keamanan pangan.</div>
+                        <div style="background:var(--surface);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--text-muted);line-height:1.6"><strong style="color:var(--primary)">f.</strong> Pelaksanaan administrasi di bidang ketersediaan pangan, kerawanan pangan, distribusi pangan, cadangan pangan, penganekaragaman konsumsi dan keamanan pangan.</div>
+                        <div style="background:var(--surface);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--text-muted);line-height:1.6"><strong style="color:var(--primary)">g.</strong> Pelaksanaan tugas kedinasan lain yang diberikan oleh Bupati terkait dengan tugas dan fungsinya.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /page-content -->
+    </div>
+    <!-- /main -->
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+        <div class="modal">
+            <img id="modal-photo" src="" class="modal-photo" alt="">
+            <h3 id="modal-name"></h3>
+            <div class="modal-role" id="modal-role"></div>
+            <div class="modal-info" id="modal-info"></div>
+            <button class="modal-close" onclick="closeModalDirect()">Tutup</button>
+        </div>
     </div>
 
-    <!-- ================= FOOTER ================= -->
-    <footer id="footer">
-        © Dian Mandala Putra
-    </footer>
+    <script>
+        // ── NAVIGATION ──
+        const sections = {
+            beranda: {
+                heading: 'Beranda',
+                sub: 'Selamat datang di portal Dukcapil Parigi Moutong'
+            },
+            profil: {
+                heading: 'Profil Dinas',
+                sub: 'Informasi umum Dinas Kependudukan dan Pencatatan Sipil'
+            },
+            layanan: {
+                heading: 'Layanan Unggulan',
+                sub: 'Program prioritas pelayanan masyarakat'
+            },
+            struktur: {
+                heading: 'Struktur Organisasi',
+                sub: 'Susunan pejabat dan pegawai Dukcapil Parigi Moutong'
+            },
+            jadwal: {
+                heading: 'Jadwal Pelayanan',
+                sub: 'Jam operasional pelayanan dinas'
+            },
+            tantangan: {
+                heading: 'Tantangan & Kendala',
+                sub: 'Isu dan permasalahan dalam penyelenggaraan layanan'
+            },
+            tugas: {
+                heading: 'Tugas & Fungsi',
+                sub: 'Dasar hukum dan uraian tugas dinas'
+            },
+        };
 
+        function showSection(id, el) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            document.getElementById('section-' + id).classList.add('active');
+            el.classList.add('active');
+            document.getElementById('topbar-heading').textContent = sections[id].heading;
+            document.getElementById('topbar-sub').textContent = sections[id].sub;
+        }
+
+        // ── DATE ──
+        function updateDate() {
+            const now = new Date();
+            const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agt', 'Sep', 'Okt', 'Nov', 'Des'];
+            document.getElementById('topbar-date-day').textContent =
+                `${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
+            const h = String(now.getHours()).padStart(2, '0');
+            const m = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('topbar-date-time').textContent = `${h}:${m} WITA`;
+        }
+        updateDate();
+        setInterval(updateDate, 30000);
+
+        // ── MODAL DATA ──
+        const staffData = {
+            sulis: {
+                name: 'Sulis Sarahwati Iklima',
+                role: 'Kepala Dinas',
+                photo: '/mnt/user-data/uploads/1000025463.jpg',
+                info: `<p><strong>Jabatan:</strong> Kepala Dinas Kependudukan dan Pencatatan Sipil</p>
+             <p><strong>Instansi:</strong> Dukcapil Kab. Parigi Moutong</p>
+             <p><strong>Fungsi:</strong> Memimpin seluruh kegiatan dinas dan bertanggung jawab atas kebijakan serta pelayanan administrasi kependudukan.</p>`
+            },
+            arnita: {
+                name: 'Arnita Sumule',
+                role: 'Sekretariat',
+                photo: '/mnt/user-data/uploads/1000025462.jpg',
+                info: `<p><strong>Jabatan:</strong> Sekretaris Dinas</p>
+             <p><strong>Lingkup:</strong> Subbag Umum & Kepegawaian, Keuangan, Perencanaan</p>
+             <p><strong>Fungsi:</strong> Mengelola urusan administrasi, keuangan, dan perencanaan dinas.</p>`
+            },
+            inggrid: {
+                name: 'Inggrid Anleani Putri',
+                role: 'Bidang PIAK',
+                photo: '/mnt/user-data/uploads/1000025458.jpg',
+                info: `<p><strong>Jabatan:</strong> Pengelola Bidang PIAK</p>
+             <p><strong>Lingkup:</strong> Pengelolaan Informasi Administrasi Kependudukan</p>
+             <p><strong>Fungsi:</strong> Mengelola sistem data kependudukan (SIAK), pengolahan, dan keamanan database.</p>`
+            },
+            risna: {
+                name: 'Risna Amanda Putri',
+                role: 'Bidang Pencatatan Sipil',
+                photo: '/mnt/user-data/uploads/1000025459.jpg',
+                info: `<p><strong>Jabatan:</strong> Pengelola Bid. Pencatatan Sipil</p>
+             <p><strong>Lingkup:</strong> Akta kelahiran, kematian, perkawinan/perceraian</p>
+             <p><strong>Fungsi:</strong> Melayani penerbitan dan pencatatan akta-akta sipil masyarakat.</p>`
+            },
+            nabila: {
+                name: 'Putri Nabila',
+                role: 'Bidang Pelayanan Penduduk',
+                photo: '/mnt/user-data/uploads/1000025460.jpg',
+                info: `<p><strong>Jabatan:</strong> Pengelola Bid. Pelayanan Pendaftaran Penduduk</p>
+             <p><strong>Lingkup:</strong> KTP-el, Kartu Keluarga, Pindah Datang</p>
+             <p><strong>Fungsi:</strong> Mengurus pendaftaran dan pemutakhiran data penduduk.</p>`
+            },
+            kurnia: {
+                name: 'Kurnia A. Ayub',
+                role: 'Bid. Pemanfaatan Data & Inovasi',
+                photo: '/mnt/user-data/uploads/1000025461.jpg',
+                info: `<p><strong>Jabatan:</strong> Pengelola Bid. Pemanfaatan Data dan Inovasi Pelayanan</p>
+             <p><strong>Lingkup:</strong> Pemanfaatan data kependudukan, IKD, layanan digital</p>
+             <p><strong>Fungsi:</strong> Mengembangkan inovasi layanan digital berbasis data kependudukan.</p>`
+            },
+            lia: {
+                name: 'Lia',
+                role: 'Tenaga Kesehatan / Staf',
+                photo: '/mnt/user-data/uploads/1000025464.jpg',
+                info: `<p><strong>Jabatan:</strong> Staf / Kelompok Jabatan Fungsional</p>
+             <p><strong>Fungsi:</strong> Mendukung operasional pelayanan dinas sesuai keahlian dan bidang tugas yang ditetapkan.</p>`
+            },
+        };
+
+        function openModal(id) {
+            const s = staffData[id];
+            if (!s) return;
+            document.getElementById('modal-photo').src = s.photo;
+            document.getElementById('modal-name').textContent = s.name;
+            document.getElementById('modal-role').textContent = s.role;
+            document.getElementById('modal-info').innerHTML = s.info;
+            document.getElementById('modal-overlay').classList.add('open');
+        }
+
+        function closeModal(e) {
+            if (e.target === document.getElementById('modal-overlay')) closeModalDirect();
+        }
+
+        function closeModalDirect() {
+            document.getElementById('modal-overlay').classList.remove('open');
+        }
+    </script>
 </body>
 
 </html>
